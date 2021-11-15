@@ -291,62 +291,67 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#apply-correction-for-thermistor-thermal-inertia">
-     8.1.3. Apply correction for thermistor thermal inertia
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#apply-correction-for-conductivity-cell-thermal-inertia">
-     8.1.4. Apply correction for conductivity cell thermal inertia
+    <a class="reference internal nav-link" href="#correction-for-thermal-inertia">
+     8.1.3. Correction for thermal inertia
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#unpumped-seabird-ct-cell-on-seagliders">
-       8.1.4.1. Unpumped Seabird CT cell on seagliders
+      <a class="reference internal nav-link" href="#apply-correction-for-thermistor-thermal-inertia">
+       8.1.3.1. Apply correction for thermistor thermal inertia
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pumped-seabird-ct-cell-mounted-on-slocum-gliders">
-       8.1.4.2. Pumped Seabird CT cell mounted on Slocum gliders
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pumped-and-unpumped-seabird-ct-cell">
-       8.1.4.3. Pumped and unpumped Seabird CT cell
+      <a class="reference internal nav-link" href="#apply-correction-for-conductivity-cell-thermal-inertia">
+       8.1.3.2. Apply correction for conductivity cell thermal inertia
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#unpumped-seabird-ct-cell-on-seagliders">
+         8.1.3.2.1. Unpumped Seabird CT cell on seagliders
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pumped-seabird-ct-cell-mounted-on-slocum-gliders">
+         8.1.3.2.2. Pumped Seabird CT cell mounted on Slocum gliders
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pumped-and-unpumped-seabird-ct-cell">
+         8.1.3.2.3. Pumped and unpumped Seabird CT cell
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#socib">
-         8.1.4.3.1. SOCIB
+         8.1.3.2.4. SOCIB
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#uea-glider-toolbox">
-         8.1.4.3.2. UEA Glider Toolbox
+         8.1.3.2.5. UEA Glider Toolbox
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#integrated-marine-observing-system-imos">
-         8.1.4.3.3. Integrated Marine Observing System (IMOS)
+         8.1.3.2.6. Integrated Marine Observing System (IMOS)
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#new-method-by-daniel-wang-donglai-gong-and-travis-miles-to-be-published">
-         8.1.4.3.4. New method by Daniel Wang, Donglai Gong and Travis Miles (to be published)
+         8.1.3.2.7. New method by Daniel Wang, Donglai Gong and Travis Miles (to be published)
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#rbrlegato-sup-3-sup">
+         8.1.3.2.8. RBR
+         <em>
+          legato
+         </em>
+         <sup>
+          3
+         </sup>
         </a>
        </li>
       </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#rbrlegato-sup-3-sup">
-       8.1.4.4. RBR
-       <em>
-        legato
-       </em>
-       <sup>
-        3
-       </sup>
-      </a>
      </li>
     </ul>
    </li>
@@ -410,16 +415,17 @@ The unpumped RBR<em>legato</em><sup>3</sup> reduces the error associated with th
 <div class="section" id="interpolate-to-consistent-timestamps">
 <span id="interp-timestamps"></span><h3><span class="section-number">8.1.2. </span>Interpolate to consistent timestamps<a class="headerlink" href="#interpolate-to-consistent-timestamps" title="Permalink to this headline">¶</a></h3>
 <p>Interpolate to consistent timestamps between thermistor, conductivity cell and pressure sensors.</p>
-<p><strong>Correction for thermal inertia</strong>
-Thermistors and conductivity cells have finite, but different, response times and are addressed separately.</p>
 </div>
+<div class="section" id="correction-for-thermal-inertia">
+<h3><span class="section-number">8.1.3. </span>Correction for thermal inertia<a class="headerlink" href="#correction-for-thermal-inertia" title="Permalink to this headline">¶</a></h3>
+<p>Thermistors and conductivity cells have finite, but different, response times and are addressed separately.</p>
 <div class="section" id="apply-correction-for-thermistor-thermal-inertia">
-<span id="tl-correction-temperature"></span><h3><span class="section-number">8.1.3. </span>Apply correction for thermistor thermal inertia<a class="headerlink" href="#apply-correction-for-thermistor-thermal-inertia" title="Permalink to this headline">¶</a></h3>
+<span id="tl-correction-temperature"></span><h4><span class="section-number">8.1.3.1. </span>Apply correction for thermistor thermal inertia<a class="headerlink" href="#apply-correction-for-thermistor-thermal-inertia" title="Permalink to this headline">¶</a></h4>
 <p>Heat must diffuse through a metal housing to reach the thermistor itself before a temperature change is registered. If a sensor has a long response time
 relative to the time scale for temperature changes, then the measured temperature will both lag the true signal, and have a reduced high-frequency amplitude. The error manifests itself as spikes in salinity and density especially when crossing interfaces with a sharp change in temperature with depth. The simplest correction it to shift temperature in time to ensure that the conductivity and temperature readings were taken simultaneously.</p>
 </div>
 <div class="section" id="apply-correction-for-conductivity-cell-thermal-inertia">
-<span id="tl-correction"></span><h3><span class="section-number">8.1.4. </span>Apply correction for conductivity cell thermal inertia<a class="headerlink" href="#apply-correction-for-conductivity-cell-thermal-inertia" title="Permalink to this headline">¶</a></h3>
+<span id="tl-correction"></span><h4><span class="section-number">8.1.3.2. </span>Apply correction for conductivity cell thermal inertia<a class="headerlink" href="#apply-correction-for-conductivity-cell-thermal-inertia" title="Permalink to this headline">¶</a></h4>
 <p>Because conductivity is a function of both temperature and salinity, when the conductivity cell exchanges heat with the water it samples, errors can occur which manifest themselves as spikes in salinity or density when the instrument enters a mixed layer from stratified waters.</p>
 <p>Initially, the effects of thermal inertia can be visualised as a scatter plot of temperature and salinity, colored by dive phase (whether the glider is performing a dive or a climb).
 The effectiveness of the correction can then be checked similarly.
@@ -430,30 +436,31 @@ Often, the correction is not perfect: the remaining error can be reported as a R
 </div>
 <p>There are a number of implementations used by the community to correct for conductivity cell thermal inertia. These have generally been developed for specific sensor-platform integrations and are listed below as such.</p>
 <div class="section" id="unpumped-seabird-ct-cell-on-seagliders">
-<span id="method1"></span><h4><span class="section-number">8.1.4.1. </span>Unpumped Seabird CT cell on seagliders<a class="headerlink" href="#unpumped-seabird-ct-cell-on-seagliders" title="Permalink to this headline">¶</a></h4>
+<span id="method1"></span><h5><span class="section-number">8.1.3.2.1. </span>Unpumped Seabird CT cell on seagliders<a class="headerlink" href="#unpumped-seabird-ct-cell-on-seagliders" title="Permalink to this headline">¶</a></h5>
 <p>Basestation processing developed by Charlie Eriksen (unpublished).
 The correction is based on an iterative thermal diffusion scheme through layers in the water column.</p>
 </div>
 <div class="section" id="pumped-seabird-ct-cell-mounted-on-slocum-gliders">
-<span id="method2"></span><h4><span class="section-number">8.1.4.2. </span>Pumped Seabird CT cell mounted on Slocum gliders<a class="headerlink" href="#pumped-seabird-ct-cell-mounted-on-slocum-gliders" title="Permalink to this headline">¶</a></h4>
+<span id="method2"></span><h5><span class="section-number">8.1.3.2.2. </span>Pumped Seabird CT cell mounted on Slocum gliders<a class="headerlink" href="#pumped-seabird-ct-cell-mounted-on-slocum-gliders" title="Permalink to this headline">¶</a></h5>
 <p>GEOMAR implements the <span id="id9">[<a class="reference internal" href="salinity_references.html#id3">Garau <em>et al.</em>, 2011</a>]</span> method with updated coefficients.</p>
 </div>
 <div class="section" id="pumped-and-unpumped-seabird-ct-cell">
-<span id="method3"></span><h4><span class="section-number">8.1.4.3. </span>Pumped and unpumped Seabird CT cell<a class="headerlink" href="#pumped-and-unpumped-seabird-ct-cell" title="Permalink to this headline">¶</a></h4>
+<span id="method3"></span><h5><span class="section-number">8.1.3.2.3. </span>Pumped and unpumped Seabird CT cell<a class="headerlink" href="#pumped-and-unpumped-seabird-ct-cell" title="Permalink to this headline">¶</a></h5>
+</div>
 <div class="section" id="socib">
-<span id="method4"></span><h5><span class="section-number">8.1.4.3.1. </span>SOCIB<a class="headerlink" href="#socib" title="Permalink to this headline">¶</a></h5>
+<span id="method4"></span><h5><span class="section-number">8.1.3.2.4. </span>SOCIB<a class="headerlink" href="#socib" title="Permalink to this headline">¶</a></h5>
 <p>SOCIB implements the <span id="id10">[<a class="reference internal" href="salinity_references.html#id3">Garau <em>et al.</em>, 2011</a>]</span> method.</p>
 </div>
 <div class="section" id="uea-glider-toolbox">
-<span id="method5"></span><h5><span class="section-number">8.1.4.3.2. </span>UEA Glider Toolbox<a class="headerlink" href="#uea-glider-toolbox" title="Permalink to this headline">¶</a></h5>
+<span id="method5"></span><h5><span class="section-number">8.1.3.2.5. </span>UEA Glider Toolbox<a class="headerlink" href="#uea-glider-toolbox" title="Permalink to this headline">¶</a></h5>
 <p>UEA glider toolbox implements <span id="id11">[<a class="reference internal" href="salinity_references.html#id3">Garau <em>et al.</em>, 2011</a>]</span>, using GEOMAR / Gerd Krahmann polynomials and an empirical regression of alpha and tau absolutes and offsets.</p>
 </div>
 <div class="section" id="integrated-marine-observing-system-imos">
-<span id="method6"></span><h5><span class="section-number">8.1.4.3.3. </span>Integrated Marine Observing System (IMOS)<a class="headerlink" href="#integrated-marine-observing-system-imos" title="Permalink to this headline">¶</a></h5>
+<span id="method6"></span><h5><span class="section-number">8.1.3.2.6. </span>Integrated Marine Observing System (IMOS)<a class="headerlink" href="#integrated-marine-observing-system-imos" title="Permalink to this headline">¶</a></h5>
 <p><span id="id12">[<a class="reference internal" href="salinity_references.html#id8">Woo and Gourcuff, 2021</a>]</span> provide recommendations for the correction of thermal-inertia to both pumped and unpumped Seabird CT cells, following alignment of temperature measurements to the conductivity cell. In the case of pumped CTDs, the flow through the cell is constant and the method of <span id="id13">[<a class="reference internal" href="salinity_references.html#id2">Lueck and Picklo, 1990</a>]</span>,  generalised  by <span id="id14">[<a class="reference internal" href="salinity_references.html#id9">Morison <em>et al.</em>, 1994</a>]</span> is implemented. In the case of unpumped CTDs, the method developed by <span id="id15">[<a class="reference internal" href="salinity_references.html#id9">Morison <em>et al.</em>, 1994</a>]</span> is recommended over the more recent method by <span id="id16">[<a class="reference internal" href="salinity_references.html#id3">Garau <em>et al.</em>, 2011</a>]</span>, which modified <span id="id17">[<a class="reference internal" href="salinity_references.html#id9">Morison <em>et al.</em>, 1994</a>]</span> to take into account variable flow speeds as a result of an unpumped CTD. Testing by <span id="id18">[<a class="reference internal" href="salinity_references.html#id8">Woo and Gourcuff, 2021</a>]</span> found that the improvement in the correction algorithm did not improve the results and is computationally inefficient.</p>
 </div>
 <div class="section" id="new-method-by-daniel-wang-donglai-gong-and-travis-miles-to-be-published">
-<span id="method7"></span><h5><span class="section-number">8.1.4.3.4. </span>New method by Daniel Wang, Donglai Gong and Travis Miles (to be published)<a class="headerlink" href="#new-method-by-daniel-wang-donglai-gong-and-travis-miles-to-be-published" title="Permalink to this headline">¶</a></h5>
+<span id="method7"></span><h5><span class="section-number">8.1.3.2.7. </span>New method by Daniel Wang, Donglai Gong and Travis Miles (to be published)<a class="headerlink" href="#new-method-by-daniel-wang-donglai-gong-and-travis-miles-to-be-published" title="Permalink to this headline">¶</a></h5>
 <p>An improved methodology is proposed by Daniel Wang, Donglai Gong and Travis Miles to correct the thermal lag error in pumped glider CTDs with a specific focus on glider data from the MAB and other highly stratified oceans.
 The method has been tested and validated on Slocum gliders with pumped Seabird CTDs.
 An updated thermal lag correction algorithm was developed based on <span id="id19">[<a class="reference internal" href="salinity_references.html#id3">Garau <em>et al.</em>, 2011</a>]</span> and it introduces a new cost function for calculating the pairwise thermal lag correction coefficients in highly stratified oceans.
@@ -463,14 +470,14 @@ Based on the observed temperature gradient at the thermocline, the algorithm the
 The improved method was able to eliminate most of the mismatches of salinity and density profiles between adjacent down up casts, and also fixed the problem of mismatching water mass identities in the T/S space.
 Salinity spikes up to 0.5 and density inversions up to 0.2 kg m<sup>-3</sup> the vertical profiles were successfully corrected.</p>
 </div>
-</div>
 <div class="section" id="rbrlegato-sup-3-sup">
-<span id="method8"></span><h4><span class="section-number">8.1.4.4. </span>RBR<em>legato</em><sup>3</sup><a class="headerlink" href="#rbrlegato-sup-3-sup" title="Permalink to this headline">¶</a></h4>
+<span id="method8"></span><h5><span class="section-number">8.1.3.2.8. </span>RBR<em>legato</em><sup>3</sup><a class="headerlink" href="#rbrlegato-sup-3-sup" title="Permalink to this headline">¶</a></h5>
 <p>Recommended procedures by RBR themselves using internal and external temperature of the logger as detailed in their “Data processing and dynamic corrections for the RBR<em>legato</em><sup>3</sup> CTD” report.
 Note that this work is still on-going, so the procedures are expected to be updated in the near future.</p>
 <div class="figure align-default" id="id20">
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/giddy_example_TL.png"><img alt="TL_correction" class="bg-primary mb-1" src="../_images/giddy_example_TL.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8.2 </span><span class="caption-text">Example of the thermal inertia effect on salinity before and after correction (Isabelle Giddy)</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 </div>
