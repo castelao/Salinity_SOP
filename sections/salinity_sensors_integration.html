@@ -348,8 +348,13 @@ commentsRunWhenDOMLoaded(addUtterances);
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensor-sampling-rates">
+     3.2.2. Sensor sampling rates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sensor-storage">
-     3.2.2. Sensor storage
+     3.2.3. Sensor storage
     </a>
    </li>
   </ul>
@@ -384,8 +389,7 @@ Pumped CT sensors on the other hand, have a constant through-flow rate, allowing
 The separate temperature and conductivity sensors are installed on the upper side of the glider pressure hull and integrated with the internal glider data acquisition and flight control system.
 On the CT-Sail the temperature sensor is positioned beneath and parallel to the conductivity sensor.
 The conductivity sensor itself is positioned within a metal housing with hole cut-outs to allow for flushing. The pressure sensor is located ~40 cm in front of the thermistor, requiring a slight spatial alignment with the sensors.
-Power consumption is 21 mW while profiling.
-The sampling speed is set by the user, typically to 2 Hz.</p>
+Power consumption is 21 mW while profiling.</p>
 <p>Sea-Bird provided <a class="reference external" href="https://www.seabird.com/sbe-41-argo-ctd/product?id=54627907875">CTD SBE41-sensor</a> accuracy ratings: Conductivity: ± 0.0003 S <sup>-m</sup> over a range of 0 to 7 S m<sup>-1</sup>; Temperature:  ± 0.002<sup>o</sup>C over a range of -5 - 45<sup>o</sup>C and Pressure: ± 2 dbar over a range of 0-2000 m.</p>
 <div class="figure align-default" id="ct-sail">
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/giddy_CT_sail.png"><img alt="CT-SAIL" class="bg-primary mb-1" src="../_images/giddy_CT_sail.png" style="width: 400px;" /></a>
@@ -403,7 +407,7 @@ Power consumption is 175 mW when continuously recording at 1 Hz.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/giddy_slocum_CTD.png"><img alt="SLOCUM-CTD" class="bg-primary mb-1" src="../_images/giddy_slocum_CTD.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Slocum Glider CTD (pumped). The thermistor is located within the inflow valve on the left (Image credit: Isabelle Giddy)</span><a class="headerlink" href="#slocum-ctd" title="Permalink to this image">¶</a></p>
 </div>
-<p>A variation of the GPCTD, the <a class="reference external" href="https://www.seabird.com/slocum-glider-ctd/product?id=60762467713&amp;callback=qs">Slocum Glider CTD</a> has been developed for installation on Slocum gliders. The sensor is installed on the side of the Slocum. The continuously pumped CTD consumes 240 mW sampling continuously at 1/2 Hz.</p>
+<p>A variation of the GPCTD, the <a class="reference external" href="https://www.seabird.com/slocum-glider-ctd/product?id=60762467713&amp;callback=qs">Slocum Glider CTD</a> has been developed for installation on SLOCUM gliders. The sensor is installed on the side of the SLOCUM. The continuously pumped CTD consumes 240 mW sampling continuously at 0.5 Hz.</p>
 </div>
 </div>
 <div class="section" id="rbrlegato-sup-3-sup">
@@ -472,8 +476,16 @@ This integration design can minimize the impact of the CTD on the streamline of 
 </div>
 </div>
 </div>
+<div class="section" id="sensor-sampling-rates">
+<span id="sensor-sampling"></span><h3><span class="section-number">3.2.2. </span>Sensor sampling rates<a class="headerlink" href="#sensor-sampling-rates" title="Permalink to this headline">¶</a></h3>
+<p>While each sensor has a range of sampling rates that can be set, the real limitation is set by the processing system associated with the platform.</p>
+<p>Sensors integrated on <span class="xref myst">Seagliders</span> are limited to once every 5 seconds (0.2 Hz), unless the seaglider is installed with a scicon board (discontinued).</p>
+<p><a class="reference internal" href="#seaexplorer"><span class="std std-ref">SeaExplorers</span></a> have a dedicated ARM processor and can handle up to 16Hz.</p>
+<p>Older <a class="reference internal" href="#slocum"><span class="std std-ref">Slocums</span></a> with a persistor typically sample once every 4 seconds (0.25 Hz). This can be changed to once every 2 seconds (0.5 Hz) when the science persistor has ‘free’ time, meaning when you do not have too many other sensors.
+Recent models (eg. G3) can handle faster sampling rates.</p>
+</div>
 <div class="section" id="sensor-storage">
-<span id="id13"></span><h3><span class="section-number">3.2.2. </span>Sensor storage<a class="headerlink" href="#sensor-storage" title="Permalink to this headline">¶</a></h3>
+<span id="id13"></span><h3><span class="section-number">3.2.3. </span>Sensor storage<a class="headerlink" href="#sensor-storage" title="Permalink to this headline">¶</a></h3>
 <p>Sensors are stored dry with sensor caps on or tape to cover open valves, and protected from dust and freeze.</p>
 </div>
 </div>
