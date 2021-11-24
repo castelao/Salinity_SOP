@@ -400,7 +400,8 @@ For pumped CTDs, the flow through the CT cell is known and constant, thus correc
 In the case of unpumped CTDs, for increased accuracy, we recommend using the modelled velocity of the glider through the water (based on the flight model) to estimate the flushing speed of the CT cell, which can be used to correct for the temperature offset (reference to Depth Averages Current (DAC) SOP).
 The flight model can be improved by following pre-deployment and piloting protocols as per the DAC SOP.
 The amplitude of the error, ɑ, and the time offset constant, 𝜏, are used to correct for thermal mass offset.
-These parameters can be estimated by minimizing the difference between consecutive up and down dives in temperature and salinity space, although minimizing in salinity and depth space can be preferable in some environmental conditions (with different stratification characteristics) and was also applied by <span id="id7">[<a class="reference internal" href="salinity_references.html#id9">Morison <em>et al.</em>, 1994</a>]</span>. We use up-down dives (the top of the yo) for this correction because the measurements are closest in time and space in the upper layer/thermocline where thermal-intertia errors tend to be most important.
+These parameters can be estimated by minimizing the difference between consecutive up and down dives in temperature and salinity space, although minimizing in salinity and depth space can be preferable in some environmental conditions (with different stratification characteristics) and was also applied by <span id="id7">[<a class="reference internal" href="salinity_references.html#id9">Morison <em>et al.</em>, 1994</a>]</span>.
+We use up-down dives (the top of the yo) for this correction because the measurements are closest in time and space in the upper layer/thermocline where thermal-intertia errors tend to be most important.
 One can elect to apply this minimization per dive or over the whole mission.
 Per dive tends to give cleaner data but can sometimes mask real signals (if regressed in depth, z).
 Applying the minimization per mission makes the assumption that the shape of the sensor doesn’t change and that the model is representative and so only one set of parameters is needed to represent a whole mission.
@@ -426,7 +427,8 @@ The unpumped RBR<em>legato</em><sup>3</sup> reduces the error associated with th
 <p>Thermistors and conductivity cells have finite, but different, response times and are addressed separately.</p>
 <div class="section" id="apply-correction-for-thermistor-thermal-inertia">
 <span id="tl-correction-temperature"></span><h4><span class="section-number">8.1.3.1. </span>Apply correction for thermistor thermal inertia<a class="headerlink" href="#apply-correction-for-thermistor-thermal-inertia" title="Permalink to this headline">¶</a></h4>
-<p>Heat must diffuse through a metal housing to reach the thermistor itself before a temperature change is registered. If a sensor has a long response time
+<p>Heat must diffuse through a metal housing to reach the thermistor itself before a temperature change is registered.
+If a sensor has a long response time
 relative to the time scale for temperature changes, then the measured temperature will both lag the true signal, and have a reduced high-frequency amplitude. The error manifests itself as spikes in salinity and density especially when crossing interfaces with a sharp change in temperature with depth. The simplest correction it to shift temperature in time to ensure that the conductivity and temperature readings were taken simultaneously.</p>
 </div>
 <div class="section" id="apply-correction-for-conductivity-cell-thermal-inertia">
@@ -439,7 +441,8 @@ Often, the correction is not perfect: the remaining error can be reported as a R
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/giddy_TS_correction.png"><img alt="TL_correction" class="bg-primary mb-1" src="../_images/giddy_TS_correction.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8.1 </span><span class="caption-text">Assessment of thermal inertia effects and its correction for one consecutive dive/climb sequence a) Uncorrected salinity and temperature; b) Corrected salinity and temperature; c) Uncorrected (red) and corrected (black) temperature-depth profile (both dive and climb); d) Uncorrected (red) and corrected (black) salinity-depth profile (both dive and climb); e) the temperature difference between a climb and a dive (uncorrected: red; corrected: black); f) the salinity difference between a climb and a dive (uncorrected: red; corrected: black). (Figure credit: Isabelle Giddy).</span><a class="headerlink" href="#example-tl-corrected-glider-transect" title="Permalink to this image">¶</a></p>
 </div>
-<p>There are a number of implementations used by the community to correct for conductivity cell thermal inertia. These have generally been developed for specific sensor-platform integrations and are listed below as such.</p>
+<p>There are a number of implementations used by the community to correct for conductivity cell thermal inertia.
+These have generally been developed for specific sensor-platform integrations and are listed below as such.</p>
 <div class="section" id="unpumped-seabird-ct-cell-on-seagliders">
 <span id="method1"></span><h5><span class="section-number">8.1.3.2.1. </span>Unpumped Seabird CT cell on seagliders<a class="headerlink" href="#unpumped-seabird-ct-cell-on-seagliders" title="Permalink to this headline">¶</a></h5>
 <p>Basestation processing developed by Charlie Eriksen (unpublished).
