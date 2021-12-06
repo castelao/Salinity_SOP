@@ -321,13 +321,13 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#spray">
-       3.2.1.1. Spray
+      <a class="reference internal nav-link" href="#seaglider">
+       3.2.1.1. Seaglider
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#seaglider">
-       3.2.1.2. Seaglider
+      <a class="reference internal nav-link" href="#spray">
+       3.2.1.2. Spray
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -426,14 +426,8 @@ As a logger, the RBR<em>legato</em><sup>3</sup> can also integrate other RBR sen
 <span id="integration"></span><h2><span class="section-number">3.2. </span>Sensor integrations with gliders<a class="headerlink" href="#sensor-integrations-with-gliders" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mounting-location">
 <span id="id8"></span><h3><span class="section-number">3.2.1. </span>Mounting location<a class="headerlink" href="#mounting-location" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="spray">
-<span id="id9"></span><h4><span class="section-number">3.2.1.1. </span>Spray<a class="headerlink" href="#spray" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>expert missing</p></li>
-</ul>
-</div>
 <div class="section" id="seaglider">
-<span id="id10"></span><h4><span class="section-number">3.2.1.2. </span>Seaglider<a class="headerlink" href="#seaglider" title="Permalink to this headline">¶</a></h4>
+<span id="id9"></span><h4><span class="section-number">3.2.1.1. </span>Seaglider<a class="headerlink" href="#seaglider" title="Permalink to this headline">¶</a></h4>
 <p>On Seagliders the Sea-Bird electronics supplied CT-Sail is mounted on the upper side of the glider pressure hull.
 Flow past the CT sensors relies solely on the movement of the glider.
 Sea-Bird no longer lists the CT-Sail but is manufactured on request by integrators.
@@ -443,6 +437,11 @@ The GPCTD is installed between the pressure hull and the fairing in the aft-floo
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/giddy_seaglider_CTSail.png"><img alt="SEAGLIDER_CTSAIL" class="bg-primary mb-1" src="../_images/giddy_seaglider_CTSail.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Unpumped CT-Sail mounted above the pressure hull on a Seaglider. (Image credit: Isabelle Giddy)</span><a class="headerlink" href="#seaglider-ctsail" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<div class="section" id="spray">
+<span id="id10"></span><h4><span class="section-number">3.2.1.2. </span>Spray<a class="headerlink" href="#spray" title="Permalink to this headline">¶</a></h4>
+<p>Spray gliders use the pumped Sea-Bird 41CP, which is slightly different from the Glider Payload CTD. The differences are largely in the packaging and plumbing.</p>
+<p>On Spray, the SBE 41CP is mounted on the dorsal side of the aft wet bay. Sampling is only during the ascending phase of each dive when the glider’s angle of attack provides clean flow to the intake.</p>
 </div>
 <div class="section" id="slocum">
 <span id="id11"></span><h4><span class="section-number">3.2.1.3. </span>Slocum<a class="headerlink" href="#slocum" title="Permalink to this headline">¶</a></h4>
@@ -483,6 +482,7 @@ This integration design can minimize the impact of the CTD on the streamline of 
 <p><a class="reference internal" href="#seaexplorer"><span class="std std-ref">SeaExplorers</span></a> have a dedicated ARM processor and can handle up to 16Hz.</p>
 <p>Older <a class="reference internal" href="#slocum"><span class="std std-ref">Slocums</span></a> with a persistor typically sample once every 4 seconds (0.25 Hz). This can be changed to once every 2 seconds (0.5 Hz) when the science persistor has ‘free’ time, meaning when you do not have too many other sensors.
 Recent models (eg. G3) can handle faster sampling rates.</p>
+<p>Sampling on <a class="reference internal" href="#spray"><span class="std std-ref">Spray</span></a> is 0.125 Hz (every 8 seconds).</p>
 </div>
 <div class="section" id="sensor-storage">
 <span id="id13"></span><h3><span class="section-number">3.2.3. </span>Sensor storage<a class="headerlink" href="#sensor-storage" title="Permalink to this headline">¶</a></h3>
