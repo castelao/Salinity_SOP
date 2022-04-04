@@ -37,9 +37,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,12 +79,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -385,7 +387,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Everyone is welcome to join the SOP at any time.</p>
 <div class="section" id="community-review">
 <h2>Community review<a class="headerlink" href="#community-review" title="Permalink to this headline">¶</a></h2>
-<p>The community review is open from November 2021 to February 28 2022.</p>
+<p>The community review is open from November 2021 to April 30 2022.</p>
 <div class="section" id="who-is-invited-to-review">
 <h3>Who is invited to review?<a class="headerlink" href="#who-is-invited-to-review" title="Permalink to this headline">¶</a></h3>
 <p>Constructive feedback by anyone is welcome. We encourage both experts and new gliders users who want to start observing oxygen to feedback on the document. For example: Experts are welcome to critically assess the specific methods and uncertainty ranges outlined in the SOP. New users can help to improve the SOP by providing a feedback from the user perspective. Please <a class="reference external" href="https://github.com/OceanGlidersCommunity/Salinity_SOP/discussions">let us know that you use the SOP</a>.</p>
@@ -398,7 +400,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>4 months community review on GitHub starting in November 2021 until February 28 2022</p></li>
+<li><p>6 months community review on GitHub starting in November 2021 until April 30 2022</p></li>
 <li><p>Follow the requirements for the <a class="reference external" href="https://www.goosocean.org">GOOS</a> endorsement process as outline in <a class="reference external" href="http://dx.doi.org/10.25607/OBP-926">Hermes 2020</a></p></li>
 <li><p>Depositing of first major SOP release at the <a class="reference external" href="https://www.oceanbestpractices.org">Ocean Best Practice System (OBPS)</a> + doi by OBPS.</p></li>
 <li><p>Submission of shorter version to <a class="reference external" href="https://www.frontiersin.org/research-topics/7173/best-practices-in-ocean-observing">Frontiers: Research Topic Best Practices in Ocean Observing</a> for peer-review March 2022</p></li>

@@ -37,9 +37,12 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,12 +79,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -479,7 +481,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>On gliders, currently three types of CTD-sensors are in use (see <a class="reference internal" href="salinity_introduction.html#table1"><span class="std std-ref">Table 1</span></a>).
 CT sensors can be unpumped (<a class="reference internal" href="#unpumped"><span class="std std-ref">Sections 3.1.1.1</span></a>; <a class="reference internal" href="#rbr-legato"><span class="std std-ref">3.1.2</span></a>) or pumped (<a class="reference internal" href="#pumped"><span class="std std-ref">Section 3.1.1.2</span></a>).
 Unpumped CT sensors have lower power consumption requirements as well as reduced susceptibility to blockages/failures because of the larger throughflow pipe (<a class="reference internal" href="salinity_rtqc.html#pump-malfunction"><span class="std std-ref">Section 6.2.4</span></a>).
-There is also reduced background vibration and noise, which is advantageous when measuring microstructure <span id="id2">[<a class="reference internal" href="salinity_references.html#id6">Fer <em>et al.</em>, 2014</a>]</span>.
+There is also reduced background vibration and noise, which is advantageous when measuring microstructure <span id="id2">[<a class="reference internal" href="salinity_references.html#id6" title="Ilker Fer, Algot K. Peterson, and Jenny E. Ullgren. Microstructure Measurements from an Underwater Glider in the Turbulent Faroe Bank Channel Overflow. Journal of Atmospheric and Oceanic Technology, 31(5):1128–1150, 2014. URL: https://journals.ametsoc.org/view/journals/atot/31/5/jtech-d-13-00221_1.xml, doi:10.1175/JTECH-D-13-00221.1.">Fer <em>et al.</em>, 2014</a>]</span>.
 However, the disadvantage of the unpumped sensors is in the post processing correction for the effects of thermal-inertia because the flow rate through the inlet is not known and has to be estimated from the glider’s flight model (<a class="reference internal" href="salinity_dmqc.html#dynamic-error-correction"><span class="std std-ref">Section 8.1</span></a>).
 Pumped CT sensors on the other hand, have a constant through-flow rate, allowing for a simpler correction of thermal-inertia. Nevertheless, both pumped and unpumped sensors require corrections for thermal-inertia (<a class="reference internal" href="salinity_dmqc.html#dynamic-error-correction"><span class="std std-ref">Section 8.1</span></a>).</p>
 <div class="section" id="sea-bird">
@@ -487,7 +489,7 @@ Pumped CT sensors on the other hand, have a constant through-flow rate, allowing
 <p>Conductivity, temperature and depth (CTD) sensors distributed by Sea-Bird electronics is currently the most widely used sensor on gliders.</p>
 <div class="section" id="unpumped">
 <span id="id4"></span><h4><span class="section-number">3.1.1.1. </span>Unpumped<a class="headerlink" href="#unpumped" title="Permalink to this headline">¶</a></h4>
-<p>The CT-Sail, a free-flushed (unpumped) CTD (SBE41), was the first science payload installed in the Seaglider <span id="id5">[<a class="reference internal" href="salinity_references.html#id7">Janzen and Creed, 2011</a>]</span> and remains widely in use.
+<p>The CT-Sail, a free-flushed (unpumped) CTD (SBE41), was the first science payload installed in the Seaglider <span id="id5">[<a class="reference internal" href="salinity_references.html#id7" title="Carol D. Janzen and Elizabeth L. Creed. Physical oceanographic data from Seaglider trials in stratified coastal waters using a new pumped payload CTD. In OCEANS'11 MTS/IEEE KONA, 1–7. Waikoloa, HI, 2011. IEEE. URL: http://ieeexplore.ieee.org/document/6107290/, doi:10.23919/OCEANS.2011.6107290.">Janzen and Creed, 2011</a>]</span> and remains widely in use.
 The separate temperature and conductivity sensors are installed on the upper side of the glider pressure hull and integrated with the internal glider data acquisition and flight control system.
 On the CT-Sail the temperature sensor is positioned beneath and parallel to the conductivity sensor.
 The conductivity sensor itself is positioned within a metal housing with hole cut-outs to allow for flushing. The pressure sensor is located ~40 cm in front of the thermistor, requiring a slight spatial alignment with the sensors.
@@ -502,7 +504,7 @@ Power consumption is 21 mW while profiling.</p>
 <span id="id6"></span><h4><span class="section-number">3.1.1.2. </span>Pumped<a class="headerlink" href="#pumped" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="https://www.seabird.com/glider-payload-ctd-gpctd/product?id=60762467712">Glider Payload CTD (GPCTD)</a> is a modular, self-contained CTD with memory and an integrated pump.
 The GPCTD improves on the CT-Sail through simpler installation requirements as well as a pump which allows for constant flow through the conductivity sensor.
-The CT sensors are ducted and pumped on the GPCTD with the intake positioned to minimize measurement errors caused by the vehicle’s thermally contaminated boundary flow <span id="id7">[<a class="reference internal" href="salinity_references.html#id7">Janzen and Creed, 2011</a>]</span>.
+The CT sensors are ducted and pumped on the GPCTD with the intake positioned to minimize measurement errors caused by the vehicle’s thermally contaminated boundary flow <span id="id7">[<a class="reference internal" href="salinity_references.html#id7" title="Carol D. Janzen and Elizabeth L. Creed. Physical oceanographic data from Seaglider trials in stratified coastal waters using a new pumped payload CTD. In OCEANS'11 MTS/IEEE KONA, 1–7. Waikoloa, HI, 2011. IEEE. URL: http://ieeexplore.ieee.org/document/6107290/, doi:10.23919/OCEANS.2011.6107290.">Janzen and Creed, 2011</a>]</span>.
 Power consumption is 175 mW when continuously recording at 1 Hz.</p>
 <p>Sea-Bird provided GPCTD accuracy ratings are: Conductivity: ± 0.0003 S m<sup>-1</sup> over a range of 0 to 9 S m<sup>-1</sup>; Temperature:  ± 0.002<sup>o</sup>C over a range of -5 - 42<sup>o</sup>C and Pressure: ± 0.1% of full scale range, up to 2000 m.</p>
 <div class="figure align-default" id="slocum-ctd">
